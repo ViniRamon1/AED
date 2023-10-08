@@ -1,0 +1,21 @@
+Implementações Realizadas:
+
+1. Definição das estruturas de dados Passenger e Spacecraft para representar passageiros e espaçonaves, respectivamente.
+2. Função auxiliar generateRandomNumber para gerar números aleatórios.
+3. Criação da fila de prioridades usando um array de Spacecraft e uma variável queueSize para rastrear o tamanho atual da fila.
+4. Interface de usuário no terminal para adicionar espaçonaves, exibir a fila de prioridades e sair.
+
+
+O que Precisa Ser Feito:
+
+1. Leitura de Dados de Arquivo: Implementar a leitura dos dados de um arquivo, como descrito nas especificações. Definir um formato de arquivo para armazenar as informações das espaçonaves, passageiros e recursos.
+
+2. Verificação e Atualização de Prioridades: Implementar a função para verificar e atualizar as prioridades das espaçonaves. Isso envolve a lógica para verificar se as informações fornecidas são válidas e, em caso contrário, ajustar a prioridade de acordo.
+
+3. Melhoria na Interface de Usuário: A interface de usuário pode ser melhorada para ser mais intuitiva e amigável. Isso inclui mensagens de feedback mais detalhadas, opções para remover espaçonaves da fila, lidar com diferentes casos de uso, etc.
+
+4. Integração de Clandestinos e Doenças: Implementar a lógica para lidar com a descoberta de clandestinos e o surgimento de doenças a bordo. Isso pode envolver a modificação da prioridade de espaçonaves de acordo com esses eventos.
+
+5. Atualização de Dados: Permitir que o usuário atualize os dados das espaçonaves, passageiros e recursos após a inserção inicial.
+
+6. Outras Operações Necessárias: Dependendo das necessidades do projeto, você pode precisar implementar outras operações, como remoção de espaçonaves da fila, consultas específicas, etc.
