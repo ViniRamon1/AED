@@ -33,10 +33,10 @@ int main() {
                 imprimir_naves(heap);
                 break;
             case 4:
-                printf("\nAtÈ breve :)\n");
+                printf("\nSaindo\n");
                 break;
             default:
-                printf("\nOP«√O INV¡LIDA\n");
+                printf("\nN√£o h√° essa op√ß√£o\n");
                 break;
         }
     } while (option != 4);
