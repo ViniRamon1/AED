@@ -10,7 +10,7 @@ int main() {
     srand((unsigned)time(NULL));
     int option = 0;
 
-    FilaPrio* heap = criar_heap();
+    Prio* heap = criar_heap();
 
     printf("Bem-vindo ao sistema de controle de naves!\n");
 
