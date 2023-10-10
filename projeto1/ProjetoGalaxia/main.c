@@ -23,11 +23,11 @@ int main() {
         switch (option) {
             case 1:
                 inserir_nave(heap);
-                printf("\nNave inserida com sucesso!\n");
+                printf("\nInserção Realizada\n");
                 break;
             case 2:
                 remover_nave(heap, obter_nave());
-                printf("\nNave removida com sucesso!\n");
+                printf("\nRemoção Realizada!\n");
                 break;
             case 3:
                 imprimir_naves(heap);
