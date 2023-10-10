@@ -65,14 +65,14 @@ void remover_nave(Prio* heap) {
 
 }
 
-void imprimir_naves(FilaPrio* heap) {
+void imprimir_naves(Prio* heap) {
     printf("\nNaves na fila de prioridade:\n");
     for (int i = 0; i < heap->nave_tamanho; i++) {
         printf("Nave %d - Prioridade: %d\n", i + 1, heap->prioridades[i]);
     }
 }
 
-void subir(FilaPrio* fp, int filho) {
+void subir(Prio* fp, int filho) {
     int pai_idx;
     Nave temp;
     pai_idx = (filho - 1) / 2;
@@ -86,7 +86,7 @@ void subir(FilaPrio* fp, int filho) {
 }
 
 // Função para mover um elemento para baixo na lista de prioridades (heap)
-void descer(FilaPrio* fp, int pai_idx) {
+void descer(Prio* fp, int pai_idx) {
     Nave temp;
     int filho = 2 * pai_idx + 1;
     while (filho < fp->size_nave) {
