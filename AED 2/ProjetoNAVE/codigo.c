@@ -52,6 +52,11 @@ int main() {
                     printf("Informe a prioridade da espaconave: ");
                     scanf("%d", &newSpacecraft.priority);
 
+                    // Verifique se a prioridade deve ser alterada com 10% de probabilidade
+                    if (generateRandomNumber(1, 10) == 1) {
+                        newSpacecraft.priority = generateRandomNumber(1, 100); // Gere uma nova prioridade aleatória
+                    }
+
                     printf("Quantos passageiros a espaconave possui? ");
                     scanf("%d", &newSpacecraft.passengerCount);
 
