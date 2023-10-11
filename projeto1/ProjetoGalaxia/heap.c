@@ -1,46 +1,110 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "heap.h"
 
-int main() {
-    srand((unsigned)time(NULL));
-    int option = 0;
+typedef struct Nave {
+    int prioridade;
+    // Outros campos da Nave
+} Nave;
 
-    Prio* heap = create_heap();
+typedef struct Prio {
+    int nave_tamanho;
+    Nave naves[100];
+    // Outros campos da fila de prioridade
+} Prio;
 
-    printf("Bem-vindo ao sistema de controle de naves!\n");
+Prio* create_heap() {
+    Prio* fp = (Prio*)malloc(sizeof(Prio));
+    if (fp != NULL) {
+        fp->nave_tamanho = 0;
+    }
+    return fp;
+}
 
-    do {
-        printf("\nSelecione o que deseja: ");
-        printf("\n\t***********Menu***************");
-        printf("\n1 - Adicionar uma nave\n2 - Retirar nave\n3 - Visualizar naves\n4 - Sair\n");
-        scanf("%d", &option);
+void libera(Prio* fp) {
+    free(fp);
+}
 
-        switch (option) {
-            case 1:
-                Nave minha_nave; // Crie uma instancia de Nave
-                // Preencha os campos da nave conforme necessário
-                inserir_nave(heap, minha_nave);
-                printf("\nInserção Realizada\n");
-                break;
-            case 2:
-                remover_nave(heap);
-                printf("\nRemoção Realizada!\n");
-                break;
-            case 3:
-                imprimir_naves(heap);
-                break;
-            case 4:
-                printf("\nSaindo\n");
-                break;
-            default:
-                printf("\nNão há essa opção\n");
-                break;
+int cheia(Prio* fp) {
+    if (fp == NULL) {
+        return -1;
+    } else if (fp->nave_tamanho == 100) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int vazia(Prio* fp) {
+    if (fp == NULL) {
+        return -1;
+    } else if (fp->nave_tamanho == 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int tamanho(Prio* fp) {
+    if (fp == NULL) {
+        return -1;
+    } else {
+        return fp->nave_tamanho;
+    }
+}
+
+void inserir_nave(Prio* fp, Nave nave) {
+    if (fp == NULL || cheia(fp)) {
+        return;
+    }
+    fp->naves[fp->nave_tamanho] = nave;
+    subir(fp, fp->nave_tamanho);
+    fp->nave_tamanho++;
+}
+
+void remover_nave(Prio* fp) {
+    if (fp == NULL || vazia(fp)) {
+        return;
+    }
+    fp->nave_tamanho--;
+    fp->naves[0] = fp->naves[fp->nave_tamanho];
+    descer(fp, 0);
+}
+
+void imprimir_naves(Prio* fp) {
+    printf("\nNaves na fila de prioridade:\n");
+    for (int i = 0; i < fp->nave_tamanho; i++) {
+        printf("Nave %d - Prioridade: %d\n", i + 1, fp->naves[i].prioridade);
+    }
+}
+
+void subir(Prio* fp, int filho) {
+    int pai_idx;
+    Nave temp;
+    pai_idx = (filho - 1) / 2;
+    while (filho > 0 && fp->naves[pai_idx].prioridade < fp->naves[filho].prioridade) {
+        temp = fp->naves[filho];
+        fp->naves[filho] = fp->naves[pai_idx];
+        fp->naves[pai_idx] = temp;
+        filho = pai_idx;
+        pai_idx = (pai_idx - 1) / 2;
+    }
+}
+
+void descer(Prio* fp, int pai_idx) {
+    Nave temp;
+    int filho = 2 * pai_idx + 1;
+    while (filho < fp->nave_tamanho) {
+        if (filho < fp->nave_tamanho - 1 && fp->naves[filho].prioridade < fp->naves[filho + 1].prioridade) {
+            filho++;
         }
-    } while (option != 4);
-
-    libera(heap);
-
-    return 0;
+        if (fp->naves[pai_idx].prioridade >= fp->naves[filho].prioridade) {
+            break;
+        }
+        temp = fp->naves[pai_idx];
+        fp->naves[pai_idx] = fp->naves[filho];
+        fp->naves[filho] = temp;
+        pai_idx = filho;
+        filho = 2 * pai_idx + 1;
+    }
 }
