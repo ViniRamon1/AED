@@ -1,115 +1,46 @@
-#include "heap.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "heap.h"
 
-Prio* create_heap() {
-    Prio* fp = (Prio*)malloc(sizeof(Prio));
-    if (fp != NULL) {
-        fp->nave_tamanho = 0;
-    }
-    return fp;
-}
+int main() {
+    srand((unsigned)time(NULL));
+    int option = 0;
 
-void libera(Prio* fp) {
-    free(fp);
-}
-int cheia(Prio* fp) {
-    if (fp == NULL) {
-        return -1;
-    } else if (fp->nave_tamanho == 100) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
+    Prio* heap = create_heap();
 
-int vazia(Prio* fp) {
-    if (fp == NULL) {
-        return -1;
-    } else if (fp->nave_tamanho == 0) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
+    printf("Bem-vindo ao sistema de controle de naves!\n");
 
-int tamanho(Prio* fp) {
-    if (fp == NULL) {
-        return -1;
-    } else {
-        return fp->nave_tamanho;
-    }
-}
+    do {
+        printf("\nSelecione o que deseja: ");
+        printf("\n\t***********Menu***************");
+        printf("\n1 - Adicionar uma nave\n2 - Retirar nave\n3 - Visualizar naves\n4 - Sair\n");
+        scanf("%d", &option);
 
-// Função auxiliar para gerar um número aleatório entre min e max
-int generateRandomNumber(int min, int max) {
-    return min + (rand() % (max - min + 1));
-}
-
-void inserir_nave(Prio* fp, Nave nave) {
-    if (fp == NULL || cheia(fp)) {
-        return;
-    }
-    
-    // Gere um número aleatório para determinar se a prioridade será alterada
-    if (generateRandomNumber(1, 10) == 1) {
-        nave.priority = generateRandomNumber(1, 100); // Gere uma nova prioridade aleatória
-    }
-
-    fp->naves[fp->nave_tamanho] = nave;
-    subir(fp, fp->nave_tamanho);
-    fp->nave_tamanho++;
-}
-
-
-void remover_nave(Prio* heap) {
-   if(fp == NULL || vazia(fp)){
-
-        return;
-   }
-
-    fp->nave_tamanho--;
-    fp->naves[0] = fp->naves[fp->nave_tamanho];
-    descer(fp, 0);
-
-}
-
-void imprimir_naves(FilaPrio* heap) {
-    printf("\nNaves na fila de prioridade:\n");
-    for (int i = 0; i < heap->nave_tamanho; i++) {
-        printf("Nave %d - Prioridade: %d\n", i + 1, heap->prioridades[i]);
-    }
-}
-
-void subir(FilaPrio* fp, int filho) {
-    int pai_idx;
-    Nave temp;
-    pai_idx = (filho - 1) / 2;
-    while (filho > 0 && fp->naves[pai].prioridade < fp->naves[filho].prioridade) {
-        temp = fp->naves[filho];
-        fp->naves[filho] = fp->naves[pai];
-        fp->naves[pai_idx] = temp;
-        filho = pai_idx;
-        pai_idx = (pai_idx - 1) / 2;
-    }
-}
-
-// Função para mover um elemento para baixo na lista de prioridades (heap)
-void descer(FilaPrio* fp, int pai_idx) {
-    Nave temp;
-    int filho = 2 * pai_idx + 1;
-    while (filho < fp->size_nave) {
-        if (filho < fp->size_nave - 1 && fp->naves[filho].prioridade < fp->naves[filho + 1].prioridade) {
-            filho++;
+        switch (option) {
+            case 1:
+                Nave minha_nave; // Crie uma instancia de Nave
+                // Preencha os campos da nave conforme necessário
+                inserir_nave(heap, minha_nave);
+                printf("\nInserção Realizada\n");
+                break;
+            case 2:
+                remover_nave(heap);
+                printf("\nRemoção Realizada!\n");
+                break;
+            case 3:
+                imprimir_naves(heap);
+                break;
+            case 4:
+                printf("\nSaindo\n");
+                break;
+            default:
+                printf("\nNão há essa opção\n");
+                break;
         }
-        if (fp->naves[pai_idx].prioridade >= fp->naves[filho].prioridade) {
-            break;
-        }
-        temp = fp->naves[pai];
-        fp->naves[pai_idx] = fp->naves[filho];
-        fp->naves[filho] = temp;
-        pai_idx = filho;
-        filho = 2 * pai_idx + 1;
-    }
+    } while (option != 4);
+
+    libera(heap);
+
+    return 0;
 }
