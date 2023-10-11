@@ -46,12 +46,19 @@ int tamanho(Prio* fp) {
 
 void inserir_nave(Prio* fp, Nave nave) {
     if (fp == NULL || cheia(fp)) {
-        return; // A função é void, não retorna valor
+        return;
     }
+    
+    // Gere um nÃºmero aleatÃ³rio para determinar se a prioridade serÃ¡ alterada
+    if (generateRandomNumber(1, 10) == 1) {
+        nave.priority = generateRandomNumber(1, 100); // Gere uma nova prioridade aleatÃ³ria
+    }
+
     fp->naves[fp->nave_tamanho] = nave;
     subir(fp, fp->nave_tamanho);
     fp->nave_tamanho++;
 }
+
 
 void remover_nave(Prio* heap) {
    if(fp == NULL || vazia(fp)){
@@ -85,7 +92,7 @@ void subir(FilaPrio* fp, int filho) {
     }
 }
 
-// Função para mover um elemento para baixo na lista de prioridades (heap)
+// FunÃ§Ã£o para mover um elemento para baixo na lista de prioridades (heap)
 void descer(FilaPrio* fp, int pai_idx) {
     Nave temp;
     int filho = 2 * pai_idx + 1;
