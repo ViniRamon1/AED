@@ -108,3 +108,8 @@ void descer(Prio* fp, int pai_idx) {
         filho = 2 * pai_idx + 1;
     }
 }
+
+// Função auxiliar para gerar um número aleatório entre min e max
+int generateRandomNumber(int min, int max) {
+    return min + (rand() % (max - min + 1));
+}
