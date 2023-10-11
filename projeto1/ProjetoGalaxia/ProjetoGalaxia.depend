@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1696987723 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"heap.h"
+
+1696987980 c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\heap.h
+
+1696989225 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\heap.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
