@@ -42,7 +42,10 @@ int tamanho(Prio* fp) {
     }
 }
 
-
+// Função auxiliar para gerar um número aleatório entre min e max
+int generateRandomNumber(int min, int max) {
+    return min + (rand() % (max - min + 1));
+}
 
 void inserir_nave(Prio* fp, Nave nave) {
     if (fp == NULL || cheia(fp)) {
