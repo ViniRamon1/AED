@@ -34,5 +34,6 @@ int vazia(Prio* fp);
 void inserir_nave(Prio* fp, Nave nave);
 void remover_nave(Prio* fp);
 void imprimir_naves(Prio* fp);
+int generateRandomNumber(int min, int max);
 
 #endif // HEAP_H_INCLUDED
