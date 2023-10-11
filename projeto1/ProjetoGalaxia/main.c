@@ -21,6 +21,9 @@ int main() {
             case 1:
                 Nave minha_nave; // Crie uma instancia de Nave
                 // Preencha os campos da nave conforme necessário
+                if (generateRandomNumber(1, 10) == 1) { //10% de probabilidade de mudar a prioridade
+                    nave.priority = generateRandomNumber(1, 100); // Gere uma nova prioridade aleatória
+                }
                 inserir_nave(heap, minha_nave);
                 printf("\nInserção Realizada\n");
                 break;
