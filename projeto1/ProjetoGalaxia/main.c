@@ -3,30 +3,29 @@
 #include <time.h>
 #include "heap.h"
 
-Nave obter_nave(){
-
-}
 int main() {
     srand((unsigned)time(NULL));
     int option = 0;
 
-    FilaPrio* heap = criar_heap();
+    Prio* heap = create_heap();
 
     printf("Bem-vindo ao sistema de controle de naves!\n");
 
     do {
-        menu();
         printf("\nSelecione o que deseja: ");
         printf("\n\t***********Menu***************");
-        printf("\n1 - adicionar uma nave\n[2] - retirar nave\n[3] - visualizar naves\n[4] - Sair\n");
+        printf("\n1 - Adicionar uma nave\n2 - Retirar nave\n3 - Visualizar naves\n4 - Sair\n");
         scanf("%d", &option);
+
         switch (option) {
             case 1:
-                inserir_nave(heap);
+                Nave minha_nave; // Crie uma instancia de Nave
+                // Preencha os campos da nave conforme necessário
+                inserir_nave(heap, minha_nave);
                 printf("\nInserção Realizada\n");
                 break;
             case 2:
-                remover_nave(heap, obter_nave());
+                remover_nave(heap);
                 printf("\nRemoção Realizada!\n");
                 break;
             case 3:
@@ -40,7 +39,6 @@ int main() {
                 break;
         }
     } while (option != 4);
-
 
     libera(heap);
 
