@@ -54,7 +54,7 @@ void inserir_nave(Prio* fp, Nave nave) {
     if (fp == NULL || cheia(fp)) {
         return;
     }
-    nave.prioridade = gerarPrioridade();
+    //nave.prioridade = gerarPrioridade();
     fp->naves[fp->nave_tamanho] = nave;
     subir(fp, fp->nave_tamanho);
     fp->nave_tamanho++;
@@ -140,7 +140,7 @@ void imprimirDetalhesNave(Nave nave) {
     printf("Prioridade da nave: %d\n", nave.prioridade);
     printf("Numero de passageiros a bordo: %d\n", nave.tam_passageiro);
     for (int i = 0; i < nave.tam_passageiro; i++) {
-        printf("Passageiro %d: Nome: %s, Idade: %d, Planeta de Origem: %s\n", i + 1,
+        printf("Passageiro %d: ID: %d Nome: %s, Idade: %d, Planeta de Origem: %s\n", i + 1, nave.passageiros[i].id,
                nave.passageiros[i].nome, nave.passageiros[i].idade, nave.passageiros[i].planetaOrigem);
     }
     printf("Numero de recursos transportados: %d\n", nave.tam_recursos_transportados);

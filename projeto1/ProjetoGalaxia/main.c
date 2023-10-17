@@ -89,7 +89,11 @@ int main() {
                     printf("\nNao ha naves!\n");
                 } else {
                     //imprimir_naves(heap);
-                    imprimirDetalhesNave(heap->naves[0]);;
+                    for(int i = 0; i < heap->nave_tamanho; i++){
+                        printf("nave %d: \n", i + 1);
+                        imprimirDetalhesNave(heap->naves[i]);
+                        printf("\n");
+                    }
                 }
                 break;
             case 4:
