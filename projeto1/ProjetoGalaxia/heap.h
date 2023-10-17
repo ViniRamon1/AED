@@ -46,5 +46,6 @@ void imprimir_naves(Prio* fp);
 int generateRandomNumber(int min, int max);
 void clearScreen();
 Nave recuperar(Prio* fp, int *indice);
+void imprimirDetalhesNave(Nave nave);
 
 #endif // HEAP_H_INCLUDED

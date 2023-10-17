@@ -4,13 +4,28 @@
 #include <stdbool.h>
 #include "config.h"
 
+typedef struct Recurso {
+    char nome[100];
+    int quantidade;
+} Recurso;
+
+typedef struct Passageiros {
+    int id;
+    int idade;
+    char planetaOrigem[100];
+    char nome[100];
+} Passageiros;
+
 typedef struct {
     int recursos[NUM_COMPARTIMENTOS];
 } RecursosNave;
 
 typedef struct Nave {
     int prioridade;
-    // Outros campos da Nave
+    int tam_passageiro;
+    int tam_recursos_transportados;
+    Passageiros passageiros[100];
+    Recurso recursos_transportados[100];
 } Nave;
 
 typedef struct Prio {
@@ -149,4 +164,18 @@ Nave recuperar(Prio* fp, int *indice) {
 
     *indice = 0; // Índice da nave com a maior prioridade é 0
     return fp->naves[0];
+}
+
+void imprimirDetalhesNave(Nave nave) {
+    printf("Prioridade da nave: %d\n", nave.prioridade);
+    printf("Número de passageiros a bordo: %d\n", nave.tam_passageiro);
+    for (int i = 0; i < nave.tam_passageiro; i++) {
+        printf("Passageiro %d: Nome: %s, Idade: %d, Planeta de Origem: %s\n", i + 1,
+               nave.passageiros[i].nome, nave.passageiros[i].idade, nave.passageiros[i].planetaOrigem);
+    }
+    printf("Número de recursos transportados: %d\n", nave.tam_recursos_transportados);
+    for (int i = 0; i < nave.tam_recursos_transportados; i++) {
+        printf("Recurso %d: Nome: %s, Quantidade: %d\n", i + 1,
+               nave.recursos_transportados[i].nome, nave.recursos_transportados[i].quantidade);
+    }
 }

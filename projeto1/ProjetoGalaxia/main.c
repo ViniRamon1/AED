@@ -29,11 +29,42 @@ int main() {
 
         switch (option) {
             case 1:
-                //Nave minhaNave; // Crie uma instancia de Nave
+                clearScreen();
+
+                Nave minhaNave; // Crie uma instância de Nave
+
                 // Preencha os campos da nave conforme necessário
-                if (generateRandomNumber(1, 10) == 1) { //10% de probabilidade de mudar a prioridade
+                printf("Digite a prioridade da nave: ");
+                scanf("%d", &minhaNave.prioridade);
+
+                printf("Digite o número de passageiros a bordo: ");
+                scanf("%d", &minhaNave.tam_passageiro);
+
+                // Captura informações dos passageiros
+                for (int i = 0; i < minhaNave.tam_passageiro; i++) {
+                    printf("Digite o nome do passageiro %d: ", i + 1);
+                    scanf("%s", minhaNave.passageiros[i].nome); // Use fgets para capturar nomes com espaços em branco
+                    printf("Digite a idade do passageiro %d: ", i + 1);
+                    scanf("%d", &minhaNave.passageiros[i].idade);
+                    printf("Digite o planeta de origem do passageiro %d: ", i + 1);
+                    scanf("%s", minhaNave.passageiros[i].planetaOrigem); // Use fgets para capturar nomes com espaços em branco
+                }
+
+                printf("Digite o número de recursos transportados: ");
+                scanf("%d", &minhaNave.tam_recursos_transportados);
+
+                // Captura informações dos recursos transportados
+                for (int i = 0; i < minhaNave.tam_recursos_transportados; i++) {
+                    printf("Digite o nome do recurso %d: ", i + 1);
+                    scanf("%s", minhaNave.recursos_transportados[i].nome); // Use fgets para capturar nomes com espaços em branco
+                    printf("Digite a quantidade do recurso %d: ", i + 1);
+                    scanf("%d", &minhaNave.recursos_transportados[i].quantidade);
+                }
+
+                if (generateRandomNumber(1, 10) == 1) { // 10% de probabilidade de mudar a prioridade
                     minhaNave.prioridade = generateRandomNumber(1, 100); // Gere uma nova prioridade aleatória
                 }
+
                 inserir_nave(heap, minhaNave);
                 clearScreen();
                 printf("\nInsercao Realizada\n");
@@ -48,7 +79,8 @@ int main() {
                 if(vazia(heap)){
                     printf("\nNao ha naves!\n");
                 } else {
-                    imprimir_naves(heap);
+                    //imprimir_naves(heap);
+                    imprimirDetalhesNave(heap->naves[0]);;
                 }
                 break;
             case 4:
