@@ -37,20 +37,29 @@ int main() {
                 printf("Digite a prioridade da nave: ");
                 scanf("%d", &minhaNave.prioridade);
 
-                printf("Digite o número de passageiros a bordo: ");
+                printf("Digite o numero de passageiros a bordo: ");
                 scanf("%d", &minhaNave.tam_passageiro);
 
                 // Captura informações dos passageiros
                 for (int i = 0; i < minhaNave.tam_passageiro; i++) {
+                    printf("Digite o id do passageiro %d: ", i + 1);
+                    scanf("%d", &minhaNave.passageiros[i].id);
+                    getchar(); // Limpe o caractere de quebra de linha pendente
+
                     printf("Digite o nome do passageiro %d: ", i + 1);
-                    scanf("%s", minhaNave.passageiros[i].nome); // Use fgets para capturar nomes com espaços em branco
+                    fgets(minhaNave.passageiros[i].nome, sizeof(minhaNave.passageiros[i].nome), stdin);
+                    minhaNave.passageiros[i].nome[strcspn(minhaNave.passageiros[i].nome, "\n")] = '\0'; // Remova a quebra de linha, se presente
+
                     printf("Digite a idade do passageiro %d: ", i + 1);
                     scanf("%d", &minhaNave.passageiros[i].idade);
+                    getchar(); // Limpe o caractere de quebra de linha pendente
+
                     printf("Digite o planeta de origem do passageiro %d: ", i + 1);
-                    scanf("%s", minhaNave.passageiros[i].planetaOrigem); // Use fgets para capturar nomes com espaços em branco
+                    fgets(minhaNave.passageiros[i].planetaOrigem, sizeof(minhaNave.passageiros[i].planetaOrigem), stdin);
+                    minhaNave.passageiros[i].planetaOrigem[strcspn(minhaNave.passageiros[i].planetaOrigem, "\n")] = '\0'; // Remova a quebra de linha, se presente
                 }
 
-                printf("Digite o número de recursos transportados: ");
+                printf("Digite o numero de recursos transportados: ");
                 scanf("%d", &minhaNave.tam_recursos_transportados);
 
                 // Captura informações dos recursos transportados

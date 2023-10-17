@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1697501775 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\heap.c
+1697565912 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\heap.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<stdbool.h>
 	"config.h"
+	"heap.h"
 
-1697565024 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\main.c
+1697565997 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
