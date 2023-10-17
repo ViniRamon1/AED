@@ -3,37 +3,7 @@
 #include <time.h>
 #include <stdbool.h>
 #include "config.h"
-
-typedef struct Recurso {
-    char nome[100];
-    int quantidade;
-} Recurso;
-
-typedef struct Passageiros {
-    int id;
-    int idade;
-    char planetaOrigem[100];
-    char nome[100];
-} Passageiros;
-
-typedef struct {
-    int recursos[NUM_COMPARTIMENTOS];
-} RecursosNave;
-
-typedef struct Nave {
-    int prioridade;
-    int tam_passageiro;
-    int tam_recursos_transportados;
-    Passageiros passageiros[100];
-    Recurso recursos_transportados[100];
-} Nave;
-
-typedef struct Prio {
-    int nave_tamanho;
-    Nave naves[100];
-    // Outros campos da fila de prioridade
-} Prio;
-
+#include "heap.h"
 
 Prio* create_heap() {
     Prio* fp = (Prio*)malloc(sizeof(Prio));
@@ -77,7 +47,7 @@ int tamanho(Prio* fp) {
 
 int gerarPrioridade() {
     // Gere uma prioridade aleatória usando a função rand
-    return rand() % 1000; // Ajuste esse valor conforme necessário
+    return rand() % 100; // Ajuste esse valor conforme necessário
 }
 
 void inserir_nave(Prio* fp, Nave nave) {
