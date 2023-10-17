@@ -1,6 +1,37 @@
 # depslib dependency file v1.0
-1696990768 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\heap.c
+1697501775 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\heap.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
+	<stdbool.h>
+	"config.h"
+
+1697501546 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	<conio.h>
+	<locale.h>
+	"heap.h"
+	"expansoes.h"
+	"config.h"
+
+1697501783 c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\heap.h
+	"config.h"
+
+1697496441 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\main2.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1697501626 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\expansoes.c
+	<stdio.h>
+	"expansoes.h"
+
+1697501617 c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\expansoes.h
+	"config.h"
+	"heap.h"
+
+1697500721 c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\config.h
 

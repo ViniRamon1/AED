@@ -1,44 +1,91 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
+#include <conio.h>
+#include <locale.h>
 #include "heap.h"
+#include "expansoes.h"
+#include "config.h"
 
 int main() {
+    setlocale(LC_ALL, "pt_BR.UTF-8");
+
     srand((unsigned)time(NULL));
     int option = 0;
 
     Prio* heap = create_heap();
+    Nave minhaNave;
+    minhaNave.prioridade = generateRandomNumber(1, 100);
+    time_t ultimaExpansao = -1;
 
     printf("Bem-vindo ao sistema de controle de naves!\n");
 
     do {
         printf("\nSelecione o que deseja: ");
         printf("\n\t***********Menu***************");
-        printf("\n1 - Adicionar uma nave\n2 - Retirar nave\n3 - Visualizar naves\n4 - Sair\n");
+        printf("\n1 - Adicionar uma nave\n2 - Retirar nave\n3 - Visualizar naves\n4 - Sair\n5 - Parte 2\n\n");
         scanf("%d", &option);
 
         switch (option) {
             case 1:
-                Nave minha_nave; // Crie uma instancia de Nave
+                //Nave minhaNave; // Crie uma instancia de Nave
                 // Preencha os campos da nave conforme necessário
                 if (generateRandomNumber(1, 10) == 1) { //10% de probabilidade de mudar a prioridade
-                    minha_nave.prioridade = generateRandomNumber(1, 100); // Gere uma nova prioridade aleatória
+                    minhaNave.prioridade = generateRandomNumber(1, 100); // Gere uma nova prioridade aleatória
                 }
-                inserir_nave(heap, minha_nave);
-                printf("\nInserção Realizada\n");
+                inserir_nave(heap, minhaNave);
+                clearScreen();
+                printf("\nInsercao Realizada\n");
                 break;
             case 2:
                 remover_nave(heap);
-                printf("\nRemoção Realizada!\n");
+                clearScreen();
+                printf("\nRemocao Realizada!\n");
                 break;
             case 3:
-                imprimir_naves(heap);
+                clearScreen();
+                if(vazia(heap)){
+                    printf("\nNao ha naves!\n");
+                } else {
+                    imprimir_naves(heap);
+                }
                 break;
             case 4:
+                clearScreen();
                 printf("\nSaindo\n");
                 break;
+            case 5:
+                clearScreen();
+                int option2;
+
+                do {
+                    printf("\nSelecione o que deseja na Parte 2: ");
+                    printf("\n\t***********Menu Parte 2***************");
+                    printf("\n1 - Verificar expansao\n2 - Outra funcionalidade\n3 - Voltar para o menu principal\n\n");
+                    scanf("%d", &option2);
+
+                    switch (option2) {
+                        case 1:
+                            // Implemente a funcionalidade de verificar expansão aqui
+                            // Use a função verificaExpansao
+                            break;
+                        case 2:
+                            // Implemente outra funcionalidade da parte 2 aqui, se houver
+                            break;
+                        case 3:
+                            clearScreen();
+                            break;
+                        default:
+                            clearScreen();
+                            printf("\nNao ha essa opcao na Parte 2\n");
+                            break;
+                    }
+                } while (option2 != 3);
+                break;
             default:
-                printf("\nNão há essa opção\n");
+                clearScreen();
+                printf("\nNao ha essa opcao\n");
                 break;
         }
     } while (option != 4);

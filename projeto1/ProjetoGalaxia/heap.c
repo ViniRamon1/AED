@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
+#include "config.h"
+
+typedef struct {
+    int recursos[NUM_COMPARTIMENTOS];
+} RecursosNave;
 
 typedef struct Nave {
     int prioridade;
@@ -12,6 +18,7 @@ typedef struct Prio {
     Nave naves[100];
     // Outros campos da fila de prioridade
 } Prio;
+
 
 Prio* create_heap() {
     Prio* fp = (Prio*)malloc(sizeof(Prio));
@@ -53,10 +60,16 @@ int tamanho(Prio* fp) {
     }
 }
 
+int gerarPrioridade() {
+    // Gere uma prioridade aleatória usando a função rand
+    return rand() % 1000; // Ajuste esse valor conforme necessário
+}
+
 void inserir_nave(Prio* fp, Nave nave) {
     if (fp == NULL || cheia(fp)) {
         return;
     }
+    nave.prioridade = gerarPrioridade();
     fp->naves[fp->nave_tamanho] = nave;
     subir(fp, fp->nave_tamanho);
     fp->nave_tamanho++;
@@ -109,7 +122,31 @@ void descer(Prio* fp, int pai_idx) {
     }
 }
 
+//funcao auxiliar para limpar a tela
+void clearScreen() {
+#ifdef _WIN32
+    // Comando para limpar a tela no Windows
+    system("cls");
+#else
+    // Comando para limpar a tela em sistemas Unix/Linux/macOS
+    system("clear");
+#endif
+}
+
 // Função auxiliar para gerar um número aleatório entre min e max
 int generateRandomNumber(int min, int max) {
     return min + (rand() % (max - min + 1));
+}
+
+//acessar nave pelo indice
+Nave recuperar(Prio* fp, int *indice) {
+    if (vazia(fp)) {
+        // Lida com o caso em que o heap está vazio
+        Nave naveVazia = {0}; // Retorna uma nave vazia
+        *indice = -1; // Define o índice como -1 para indicar que o heap está vazio
+        return naveVazia;
+    }
+
+    *indice = 0; // Índice da nave com a maior prioridade é 0
+    return fp->naves[0];
 }
