@@ -36,22 +36,24 @@
 
 1697500721 c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\config.h
 
-1697914494 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\expansoes.c
+1697922402 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\expansoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"heap.h"
 	"expansoes.h"
+	"config.h"
 
-1697914481 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\expansoes.h
+1697922198 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\expansoes.h
 	"config.h"
 	"heap.h"
 
 1697500721 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\config.h
 
-1697913591 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\heap.h
+1697920828 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\heap.h
 	"config.h"
 
-1697913743 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\heap.c
+1697920448 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\heap.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -59,7 +61,7 @@
 	"config.h"
 	"heap.h"
 
-1697914118 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\main.c
+1697921607 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>

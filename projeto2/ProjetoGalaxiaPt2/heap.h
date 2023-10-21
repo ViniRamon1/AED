@@ -28,6 +28,15 @@ typedef struct Prio {
     Nave naves[100];
 } Prio;
 
+//structs da parte 2
+typedef struct Compartimento {
+    char nome[100];
+} Compartimento;
+
+typedef struct RecursosExpansao {
+    Compartimento compartimento[4];
+} RecursosExpansao;
+
 void subir(Prio* fp, int filho);
 void descer(Prio* fp, int pai);
 Prio* create_heap();
@@ -40,7 +49,7 @@ void remover_nave(Prio* fp);
 void imprimir_naves(Prio* fp);
 int generateRandomNumber(int min, int max);
 void clearScreen();
-Nave recuperar(Prio* fp, int indice);
+Nave recuperar(Prio* fp);
 void imprimirDetalhesNave(Nave nave);
 
 #endif // HEAP_H_INCLUDED

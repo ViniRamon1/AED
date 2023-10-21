@@ -8,9 +8,15 @@
 Nave criarNaveVazia();
 
 // Função para verificar se ocorreu uma expansão da passagem
-int verificaExpansao(Prio* fp, int ultimaExpansao, Recurso recursosExpansao);
+int verificaExpansao(Prio* fp, RecursosExpansao recursosExpansao);
 
 //funcao para comparar os recursos da nave
-int compararRecursos(Recurso*, Recurso);
+int compararRecursos(Prio* fp, RecursosExpansao);
+
+//cria uma nave de testes
+Nave criarNaveTeste();
+
+//funcao para imprimir nomes de recursos da expansao
+void imprimirNomesRecursos(const RecursosExpansao *recursos);
 
 #endif // EXPANSOES_H
