@@ -47,16 +47,16 @@ int main() {
     Nave naveTeste = criarNaveTeste();
     inserir_nave(fp, naveTeste);
 
-    /*
+    //imprime na tela as informações das naves
     for(int i = 0; i < fp->nave_tamanho; i++){
         printf("nave %d: \n", i + 1);
         imprimirDetalhesNave(fp->naves[i]);
         printf("\n");
     }
-    */
 
+    int countExpansao = 0; //variavel para determinar o fim do loop
     // Simule as expansões de acordo com as especificações
-    while (!vazia(fp)) {
+    while (!vazia(fp) && countExpansao < 100) {
 
         if (vazia(fp)) {
             printf("lista vazia");
@@ -78,7 +78,15 @@ int main() {
             }
             printf("Expansao ocorrida, %d naves passaram pela passagem \n", navesRemovidas);
         }
+        countExpansao++;
         //printf("Nao houve expansao\n");
+    }
+
+    //imprime na tela as informações das naves apos expandir a passagem
+    for(int i = 0; i < fp->nave_tamanho; i++){
+        printf("nave %d: \n", i + 1);
+        imprimirDetalhesNave(fp->naves[i]);
+        printf("\n");
     }
 
     // Libere a memória alocada para o heap

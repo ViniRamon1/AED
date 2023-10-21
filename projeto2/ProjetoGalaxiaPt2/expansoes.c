@@ -73,7 +73,7 @@ void removerNavesSemExpansao(Prio* fp) {
 //nave criada para testar o metodo de expansao
 Nave criarNaveTeste() {
     Nave nave;
-    nave.prioridade = 100000;
+    nave.prioridade = 87;
     nave.tam_recursos_transportados = 4;
     strcpy(nave.recursos_transportados[0].nome, "Recurso1");
     nave.recursos_transportados[0].quantidade = generateRandomNumber(1, 100); //quantidade nao importa
