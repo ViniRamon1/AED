@@ -5,7 +5,6 @@
 #include <conio.h>
 #include <locale.h>
 #include "heap.h"
-#include "expansoes.h"
 #include "config.h"
 
 int main() {
@@ -24,7 +23,7 @@ int main() {
     do {
         printf("\nSelecione o que deseja: ");
         printf("\n\t***********Menu***************");
-        printf("\n1 - Adicionar uma nave\n2 - Retirar nave\n3 - Visualizar naves\n4 - Sair\n5 - Parte 2\n\n");
+        printf("\n1 - Adicionar uma nave\n2 - Retirar nave\n3 - Visualizar naves\n4 - Sair\n\n");
         scanf("%d", &option);
 
         switch (option) {
@@ -99,34 +98,6 @@ int main() {
             case 4:
                 clearScreen();
                 printf("\nSaindo\n");
-                break;
-            case 5:
-                clearScreen();
-                int option2;
-
-                do {
-                    printf("\nSelecione o que deseja na Parte 2: ");
-                    printf("\n\t***********Menu Parte 2***************");
-                    printf("\n1 - Verificar expansao\n2 - Outra funcionalidade\n3 - Voltar para o menu principal\n\n");
-                    scanf("%d", &option2);
-
-                    switch (option2) {
-                        case 1:
-                            // Implemente a funcionalidade de verificar expansão aqui
-                            // Use a função verificaExpansao
-                            break;
-                        case 2:
-                            // Implemente outra funcionalidade da parte 2 aqui, se houver
-                            break;
-                        case 3:
-                            clearScreen();
-                            break;
-                        default:
-                            clearScreen();
-                            printf("\nNao ha essa opcao na Parte 2\n");
-                            break;
-                    }
-                } while (option2 != 3);
                 break;
             default:
                 clearScreen();

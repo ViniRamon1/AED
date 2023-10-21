@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1697568743 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\heap.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	"config.h"
+	"heap.h"
+
+1697568682 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	<conio.h>
+	<locale.h>
+	"heap.h"
+	"expansoes.h"
+	"config.h"
+
+1697565517 c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\heap.h
+	"config.h"
+
+1697496441 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\main2.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1697501626 source:c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\expansoes.c
+	<stdio.h>
+	"expansoes.h"
+
+1697501617 c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\expansoes.h
+	"config.h"
+	"heap.h"
+
+1697500721 c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\config.h
+
+1697914494 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\expansoes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"expansoes.h"
+
+1697914481 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\expansoes.h
+	"config.h"
+	"heap.h"
+
+1697500721 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\config.h
+
+1697913591 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\heap.h
+	"config.h"
+
+1697913743 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\heap.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	"config.h"
+	"heap.h"
+
+1697914118 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	<conio.h>
+	<locale.h>
+	<string.h>
+	"heap.h"
+	"expansoes.h"
+	"config.h"
+
