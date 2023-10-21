@@ -30,8 +30,17 @@ int compararRecursos(Prio* fp, RecursosExpansao recursosExpansao) {
     int tamanhoFila = tamanho(fp);
     Nave naveAtual;
 
+    //percorrendo as naves
     for (int a = 0; a < tamanhoFila; a++) {
         naveAtual = fp->naves[a];
+        if(correspondencias == 4){
+            //printf("%d", correspondencias);
+            return 1;
+        } else {
+            //resetando as correspondencias
+            correspondencias = 0;
+        }
+
         // Percorra os compartimentos da nave
         for (int i = 0; i < 4; i++) {
             // Obtenha o nome do recurso no compartimento da nave
@@ -53,9 +62,7 @@ int compararRecursos(Prio* fp, RecursosExpansao recursosExpansao) {
             }
         }
     }
-
-    // Se o número de correspondências for igual a 4, todos os recursos correspondem
-    return (correspondencias == 4) ? 1 : 0;
+    return 0;
 }
 
 // Função para remover naves do heap quando não há expansão
@@ -70,11 +77,11 @@ Nave criarNaveTeste() {
     nave.tam_recursos_transportados = 4;
     strcpy(nave.recursos_transportados[0].nome, "Recurso1");
     nave.recursos_transportados[0].quantidade = generateRandomNumber(1, 100); //quantidade nao importa
-    strcpy(nave.recursos_transportados[1].nome, "Recurso2");
+    strcpy(nave.recursos_transportados[1].nome, "Recurso3");
     nave.recursos_transportados[1].quantidade = generateRandomNumber(1, 100); //quantidade nao importa
-    strcpy(nave.recursos_transportados[2].nome, "Recurso3");
+    strcpy(nave.recursos_transportados[2].nome, "Recurso4");
     nave.recursos_transportados[2].quantidade = generateRandomNumber(1, 100); //quantidade nao importa
-    strcpy(nave.recursos_transportados[3].nome, "Recurso4");
+    strcpy(nave.recursos_transportados[3].nome, "Recurso2");
     nave.recursos_transportados[3].quantidade = generateRandomNumber(1, 100); //quantidade nao importa
     return nave;
 }

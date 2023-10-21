@@ -78,8 +78,7 @@ int main() {
             }
             printf("Expansao ocorrida, %d naves passaram pela passagem \n", navesRemovidas);
         }
-        printf("Nao houve expansao\n");
-        break;
+        //printf("Nao houve expansao\n");
     }
 
     // Libere a memória alocada para o heap
