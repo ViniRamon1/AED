@@ -32,6 +32,9 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="config.h" />
+		<Unit filename="expansoes.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="expansoes.h" />
 		<Unit filename="heap.c">
 			<Option compilerVar="CC" />

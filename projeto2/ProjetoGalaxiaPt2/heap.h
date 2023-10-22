@@ -12,26 +12,30 @@ typedef struct Passageiros {
 
 typedef struct Recurso {
     char nome[100];
-    int quantidade;
+    int quantidade; //nesta parte nao importa a quantidade
 } Recurso;
-
-// Estrutura para representar a alocação de recursos em um compartimento da nave
-typedef struct {
-    int recursos[NUM_COMPARTIMENTOS];
-} RecursosNave;
 
 typedef struct Nave {
     int prioridade;
     int tam_passageiro;
     int tam_recursos_transportados;
     Passageiros passageiros[100];
-    Recurso recursos_transportados[100];
+    Recurso recursos_transportados[3]; //4 compartimentos
 } Nave;
 
 typedef struct Prio {
     int nave_tamanho;
     Nave naves[100];
 } Prio;
+
+//structs da parte 2
+typedef struct Compartimento {
+    char nome[100];
+} Compartimento;
+
+typedef struct RecursosExpansao {
+    Compartimento compartimento[3];
+} RecursosExpansao;
 
 void subir(Prio* fp, int filho);
 void descer(Prio* fp, int pai);
@@ -45,7 +49,7 @@ void remover_nave(Prio* fp);
 void imprimir_naves(Prio* fp);
 int generateRandomNumber(int min, int max);
 void clearScreen();
-Nave recuperar(Prio* fp, int *indice);
+Nave recuperar(Prio* fp);
 void imprimirDetalhesNave(Nave nave);
 
 #endif // HEAP_H_INCLUDED

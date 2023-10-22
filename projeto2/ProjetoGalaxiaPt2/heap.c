@@ -52,7 +52,7 @@ int gerarPrioridade() {
 
 void inserir_nave(Prio* fp, Nave nave) {
     if (fp == NULL || cheia(fp)) {
-        return;
+        return -1;
     }
     //nave.prioridade = gerarPrioridade();
     fp->naves[fp->nave_tamanho] = nave;
@@ -123,16 +123,13 @@ int generateRandomNumber(int min, int max) {
     return min + (rand() % (max - min + 1));
 }
 
-//acessar nave pelo indice
-Nave recuperar(Prio* fp, int *indice) {
+//acessar nave
+Nave recuperar(Prio* fp) {
     if (vazia(fp)) {
         // Lida com o caso em que o heap está vazio
         Nave naveVazia = {0}; // Retorna uma nave vazia
-        *indice = -1; // Define o índice como -1 para indicar que o heap está vazio
         return naveVazia;
     }
-
-    *indice = 0; // Índice da nave com a maior prioridade é 0
     return fp->naves[0];
 }
 
