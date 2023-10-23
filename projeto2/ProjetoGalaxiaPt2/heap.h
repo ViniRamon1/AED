@@ -34,7 +34,7 @@ typedef struct Compartimento {
 } Compartimento;
 
 typedef struct RecursosExpansao {
-    Compartimento compartimento[4];
+    Compartimento compartimento[3];
 } RecursosExpansao;
 
 void subir(Prio* fp, int filho);
