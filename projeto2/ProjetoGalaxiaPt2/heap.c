@@ -133,16 +133,25 @@ Nave recuperar(Prio* fp) {
     return fp->naves[0];
 }
 
-void imprimirDetalhesNave(Nave nave) {
-    printf("Prioridade da nave: %d\n", nave.prioridade);
-    printf("Numero de passageiros a bordo: %d\n", nave.tam_passageiro);
-    for (int i = 0; i < nave.tam_passageiro; i++) {
-        printf("Passageiro %d: ID: %d Nome: %s, Idade: %d, Planeta de Origem: %s\n", i + 1, nave.passageiros[i].id,
-               nave.passageiros[i].nome, nave.passageiros[i].idade, nave.passageiros[i].planetaOrigem);
-    }
-    printf("Numero de recursos transportados: %d\n", nave.tam_recursos_transportados);
-    for (int i = 0; i < nave.tam_recursos_transportados; i++) {
-        printf("Recurso %d: Nome: %s, Quantidade: %d\n", i + 1,
-               nave.recursos_transportados[i].nome, nave.recursos_transportados[i].quantidade);
+void imprimirHeap(Prio* fp) {
+    printf("\nNaves na fila de prioridade:\n");
+
+    for (int i = 0; i < fp->nave_tamanho; i++) {
+        printf("Nave %d - Prioridade: %d\n", i + 1, fp->naves[i].prioridade);
+        printf("Numero de passageiros a bordo: %d\n", fp->naves[i].tam_passageiro);
+
+        for (int j = 0; j < fp->naves[i].tam_passageiro; j++) {
+            Passageiros passageiro = fp->naves[i].passageiros[j];
+            printf("Passageiro %d: ID: %d, Nome: %s, Idade: %d, Planeta de Origem: %s\n",
+                j + 1, passageiro.id, passageiro.nome, passageiro.idade, passageiro.planetaOrigem);
+        }
+
+        printf("Numero de recursos transportados: %d\n", fp->naves[i].tam_recursos_transportados);
+
+        for (int k = 0; k < fp->naves[i].tam_recursos_transportados; k++) {
+            Recurso recurso = fp->naves[i].recursos_transportados[k];
+            printf("Recurso %d: Nome: %s, Quantidade: %d\n", k + 1, recurso.nome, recurso.quantidade);
+        }
+        printf("\n");
     }
 }

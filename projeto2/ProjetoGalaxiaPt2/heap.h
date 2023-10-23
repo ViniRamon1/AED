@@ -20,7 +20,7 @@ typedef struct Nave {
     int tam_passageiro;
     int tam_recursos_transportados;
     Passageiros passageiros[100];
-    Recurso recursos_transportados[4]; //4 compartimentos
+    Recurso recursos_transportados[3]; //4 compartimentos
 } Nave;
 
 typedef struct Prio {

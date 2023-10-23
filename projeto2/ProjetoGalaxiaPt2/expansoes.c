@@ -13,6 +13,7 @@ Nave criarNaveVazia() {
     return naveVazia;
 }
 
+/*
 // Função para verificar se ocorreu uma expansão da passagem
 int verificaExpansao(Prio* fp, RecursosExpansao recursosExpansao) {
     int expansaoEncontrada = 0;
@@ -23,7 +24,9 @@ int verificaExpansao(Prio* fp, RecursosExpansao recursosExpansao) {
     }
     return expansaoEncontrada;
 }
+*/
 
+/*
 int compararRecursos(Prio* fp, RecursosExpansao recursosExpansao) {
     // Variável para contar o número de correspondências encontradas
     int correspondencias = 0;
@@ -64,6 +67,7 @@ int compararRecursos(Prio* fp, RecursosExpansao recursosExpansao) {
     }
     return 0;
 }
+*/
 
 // Função para remover naves do heap quando não há expansão
 void removerNavesSemExpansao(Prio* fp) {
@@ -79,8 +83,6 @@ Nave criarNaveTeste() {
     nave.recursos_transportados[0].quantidade = generateRandomNumber(1, 100); //quantidade nao importa
     strcpy(nave.recursos_transportados[1].nome, "Recurso3");
     nave.recursos_transportados[1].quantidade = generateRandomNumber(1, 100); //quantidade nao importa
-    strcpy(nave.recursos_transportados[2].nome, "Recurso4");
-    nave.recursos_transportados[2].quantidade = generateRandomNumber(1, 100); //quantidade nao importa
     strcpy(nave.recursos_transportados[3].nome, "Recurso2");
     nave.recursos_transportados[3].quantidade = generateRandomNumber(1, 100); //quantidade nao importa
     return nave;

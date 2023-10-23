@@ -36,7 +36,7 @@
 
 1697500721 c:\users\vinic\onedrive\documentos\github\aed\projeto1\projetogalaxia\config.h
 
-1697929240 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\expansoes.c
+1698012101 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\expansoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -48,12 +48,12 @@
 	"config.h"
 	"heap.h"
 
-1697500721 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\config.h
+1698021343 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\config.h
 
-1697920828 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\heap.h
+1698011646 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\heap.h
 	"config.h"
 
-1697920448 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\heap.c
+1698012850 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\heap.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -61,15 +61,27 @@
 	"config.h"
 	"heap.h"
 
-1697929364 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\main.c
+1698021332 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<stdbool.h>
-	<conio.h>
 	<locale.h>
 	<string.h>
 	"heap.h"
 	"expansoes.h"
 	"config.h"
+	"hash.h"
+
+1698021267 source:c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\hash.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"hash.h"
+	"config.h"
+	"hash.h"
+
+1698019785 c:\users\vinic\onedrive\documentos\github\aed\projeto2\projetogalaxiapt2\hash.h
+	"config.h"
+	"heap.h"
 
