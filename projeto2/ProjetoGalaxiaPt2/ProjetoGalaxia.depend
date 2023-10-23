@@ -134,3 +134,40 @@
 	"config.h"
 	"hash.h"
 
+1698079030 source:c:\users\softex\documents\workspace\aed\aed\projeto2\projetogalaxiapt2\heap.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	"config.h"
+	"heap.h"
+
+1698082516 c:\users\softex\documents\workspace\aed\aed\projeto2\projetogalaxiapt2\config.h
+
+1698079030 c:\users\softex\documents\workspace\aed\aed\projeto2\projetogalaxiapt2\heap.h
+	"config.h"
+
+1698079479 source:c:\users\softex\documents\workspace\aed\aed\projeto2\projetogalaxiapt2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	<locale.h>
+	<string.h>
+	"heap.h"
+	"config.h"
+	"hash.h"
+	"hash.c"
+
+1698079030 c:\users\softex\documents\workspace\aed\aed\projeto2\projetogalaxiapt2\hash.h
+	"config.h"
+	"heap.h"
+
+1698082549 c:\users\softex\documents\workspace\aed\aed\projeto2\projetogalaxiapt2\hash.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"hash.h"
+	"config.h"
+	"hash.h"
+

@@ -39,10 +39,10 @@ int main() {
     }
 
     // imprimindo heap apenas para teste
-    //imprimirHeap(fp);
+    imprimirHeap(fp);
 
     // imprimindo hash apenas para teste
-    //imprimirTabela(ht);
+    imprimirTabela(ht);
 
     //condicao de parada para nao ficar em loop infinito
     int countExpansao = 0;

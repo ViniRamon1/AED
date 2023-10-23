@@ -1,0 +1,41 @@
+Estrutura Nó:
+    chaves 
+    filhos 
+
+
+encontrar_nó(nó, valor):
+    índice = 0
+    
+    
+    enquanto índice < nó.chaves.tamanho e valor > nó.chaves[índice]:
+        índice = índice + 1
+    
+    
+    se índice < nó.chaves.tamanho e valor == nó.chaves[índice]:
+        retornar (nó, índice) 
+    senão se nó.filhos.tamanho > 0:
+        
+        retornar encontrar_nó(nó.filhos[índice], valor)
+    senão:
+        retornar (nulo, -1) 
+
+
+remover_de_nó_folha(nó, índice):
+   
+    para i de índice até nó.chaves.tamanho - 2:
+        nó.chaves[i] = nó.chaves[i + 1]
+    
+    
+    nó.chaves.tamanho = nó.chaves.tamanho - 1
+
+
+encontrar_predecessor(nó, índice):
+    # Vá para o filho mais à direita da subárvore à esquerda
+    nó = nó.filhos[índice]
+    enquanto nó.filhos.tamanho > 0:
+        nó = nó.filhos[nó.chaves.tamanho]
+    
+   
+    predecessor = nó.chaves[nó.chaves.tamanho - 1]
+    
+    retornar predecessor
