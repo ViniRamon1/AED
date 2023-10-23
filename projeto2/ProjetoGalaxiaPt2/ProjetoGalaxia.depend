@@ -93,16 +93,16 @@
 	"expansoes.h"
 	"config.h"
 
-1697934535 e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\heap.h
+1698022093 e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\heap.h
 	"config.h"
 
-1697933418 e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\config.h
+1698022093 e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\config.h
 
 1697933418 e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\expansoes.h
 	"config.h"
 	"heap.h"
 
-1697933418 source:e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\heap.c
+1698022093 source:e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\heap.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -110,15 +110,27 @@
 	"config.h"
 	"heap.h"
 
-1697933418 source:e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\main.c
+1698022425 source:e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<stdbool.h>
-	<conio.h>
 	<locale.h>
 	<string.h>
 	"heap.h"
-	"expansoes.h"
 	"config.h"
+	"hash.h"
+	"hash.c"
+
+1698022093 e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\hash.h
+	"config.h"
+	"heap.h"
+
+1698022093 e:\documentos\workspace\projetoaed\aed\projeto2\projetogalaxiapt2\hash.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"hash.h"
+	"config.h"
+	"hash.h"
 

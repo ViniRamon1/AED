@@ -5,9 +5,9 @@
 #include <locale.h>
 #include <string.h>
 #include "heap.h"
-#include "expansoes.h"
 #include "config.h"
 #include "hash.h"
+#include "hash.c"
 
 int main() {
     setlocale(LC_ALL, "pt_BR.UTF-8");
